@@ -1,14 +1,13 @@
 package com.example.idnet_task.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.idnet_task.Counter
+import com.example.idnet_task.Extensions.toast
 import com.example.idnet_task.adapter.CarsAdapter
 import com.example.idnet_task.databinding.FragmentCarsBinding
 import com.example.idnet_task.model.Cars
@@ -62,12 +61,11 @@ class CarsFragment : Fragment(com.example.idnet_task.R.layout.fragment_cars) {
                 val cars: ArrayList<Cars>? = response.body() as ArrayList<Cars>?
                 cars?.let { carsAdapter.updateAdapter(it) }
                 Counter.listSize = cars?.size!!
-                Log.i("counting", carsAdapter.itemCount.toString())
 
             }
 
             override fun onFailure(call: Call<List<Cars>>, t: Throwable) {
-                Toast.makeText(activity, t.toString(), Toast.LENGTH_LONG).show()
+                toast(t.toString())
             }
         })
 

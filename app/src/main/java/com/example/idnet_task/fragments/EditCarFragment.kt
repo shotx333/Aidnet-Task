@@ -43,7 +43,6 @@ class EditCarFragment : Fragment(R.layout.fragment_car_edit) {
             } else {
                 val carsFragment: Fragment = CarsFragment()
                 updateData()
-//                activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
                 activity?.supportFragmentManager?.beginTransaction()
                     ?.replace(R.id.editCarsFragment, carsFragment)?.addToBackStack(null)?.commit()
             }

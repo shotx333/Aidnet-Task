@@ -10,7 +10,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -76,11 +75,11 @@ class AddCarFragment : Fragment(R.layout.add_car_fragment) {
         call1.enqueue(object : Callback<Cars> {
 
             override fun onResponse(call: Call<Cars>, response: Response<Cars>) {
-                Toast.makeText(activity, "წარმატებით დაემატა", Toast.LENGTH_SHORT).show()
+                toast("წარმატებით დაემატა")
             }
 
             override fun onFailure(call: Call<Cars>, t: Throwable) {
-                Log.i("mistake", t.toString())
+                toast("დამატება ვერ მოხერხდა")
             }
         })
 
