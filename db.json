@@ -1,0 +1,15 @@
+{
+  "cars": [
+    {
+      "carImage": "https://anwcleaning.com/wp-content/uploads/2016/10/Audi-R8-PNG-image.png",
+      "carName": "Audi",
+      "descriptionText": "ძრავის მოცულობა 5.0",
+      "id": 1,
+      "ownerName": "ლევან სამხარაძე"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

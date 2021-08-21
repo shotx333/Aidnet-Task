@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/carsFragment">
+
+    <fragment
+        android:id="@+id/carsFragment"
+        android:name="com.example.idnet_task.fragments.CarsFragment"
+        android:label="Cars">
+
+        <action
+            android:id="@+id/action_homeFragment_to_dashboardFragment"
+            app:destination="@id/addFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.idnet_task.fragments.AddCarFragment"
+        android:label="Add">
+
+        <argument
+            android:name="amount"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_homeFragment"
+            app:destination="@id/carsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.idnet_task.fragments.EditCarFragment"
+        android:label="Edit">
+        <action
+            android:id="@+id/action_editFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_editFragment_to_homeFragment"
+            app:destination="@id/carsFragment" />
+    </fragment>
+
+
+</navigation>
